@@ -14,11 +14,11 @@ import java.sql.Statement;
  */
 public class TeiidClient {
 
-	private static final String JDBC_URL = "jdbc:teiid:MyExample@mm://localhost:31000;version=1";
+	private static final String JDBC_URL = "jdbc:teiid:Test@mm://localhost:31000;version=1";
 
 	private static final String SQL
 	
-	= "select hashThePID(convert(EU_Customers_VBL.account.AccountID, string)) AS AccountID from EU_Customers_VBL.account";
+	= "SELECT * FROM customerList_View.customerListView";
 
 	/**
 	 * 
@@ -77,6 +77,13 @@ public class TeiidClient {
 				connection.close();
 			}
 		}
+	}
+	
+	/**
+	 * 
+	 */
+	public static void main(String[] args) throws Exception {
+		new TeiidClient();
 	}
 
 }
